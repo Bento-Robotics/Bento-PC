@@ -38,3 +38,9 @@ export BENTO_ROBOT_NAME
 source "/opt/ros/humble/setup.bash"
 #TODO: dynamically select ros2 version
 alias rviz2='QT_QPA_PLATFORM=xcb rviz2' # fixes error with rviz2 on kde neon
+
+if ! [[ -e $HOME/.Xauthority ]]
+then
+  ln -sf /run/user/1000/xauth_* ~/.Xauthority
+fi
+alias begin_operation='docker compose -f $HOME/Code/Bento-Operation/compose.yaml up'
