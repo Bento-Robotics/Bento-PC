@@ -35,7 +35,7 @@ case $BENTO_ROBOT_NAME in
 esac
 
 export BENTO_ROBOT_NAME
-source "/opt/ros/humble/setup.bash"
+source "/opt/ros/jazzy/setup.bash"
 #TODO: dynamically select ros2 version
 alias rviz2='QT_QPA_PLATFORM=xcb rviz2' # fixes error with rviz2 on kde neon
 
