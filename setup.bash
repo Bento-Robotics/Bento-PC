@@ -1,9 +1,23 @@
 BENTO_ROBOT_NAME='bento_box'
 # set this variable ⬆️ so select robot
-# possible values: { 'bento_box', 'schaeufele' }
+# possible values: { 'zyklop', 'bento_box', 'schaeufele' }
 
 
 case $BENTO_ROBOT_NAME in
+
+  zyklop)
+    echo "
+        )                             
+     ( /(           )  (              
+     )\()) (     ( /(  )\             
+    ((_)\  )\ )  )\())((_) (   `  )   
+     _((_)(()/( ((_)\  _   )\  /(/(   
+    |_  /  )(_))| |(_)| | ((_)((_)_\  
+     / /  | || || / / | |/ _ \| '_ \) 
+    /___|  \_, ||_\_\ |_|\___/| .__/  
+           |__/               |_|     
+    "
+    ;;
 
   bento_box)
     echo "
