@@ -2,11 +2,11 @@
 
 setupRobot() {
     local robot_name="$1"
-    local valid_names=("bento_box" "zyklop" "schaeufele")
+    local valid_names=("bento_box" "zyklop" "schaeufele" "crabby")
 
     # Validate name
     if [[ ! " ${valid_names[*]} " =~ " ${robot_name} " ]]; then
-        echo "WiFi is not a robot. Connect to 'Bento-Box', 'Schaeufele', or 'Zyklop'"
+        echo "WiFi is not a robot. Connect to 'Bento-Box', 'Schaeufele', 'Zyklop' or 'Crabby'"
         return 1
     fi
 
@@ -66,6 +66,18 @@ cat << EOF
            |__/               |_|     
 EOF
   ;;
+
+
+        "crabby")
+cat << EOF
+
+▗▞▀▘ ▄▄▄ ▗▞▀▜▌▗▖   ▗▖   ▄   ▄ 
+▝▚▄▖█    ▝▚▄▟▌▐▌   ▐▌   █   █ 
+    █         ▐▛▀▚▖▐▛▀▚▖ ▀▀▀█ 
+              ▐▙▄▞▘▐▙▄▞▘▄   █ 
+                         ▀▀▀  
+EOF
+  ;;
     esac
 }
 
@@ -77,7 +89,8 @@ chooseWifi() {
         "Bento-Box") echo "bento_box" ;;
         "Schaeufele") echo "schaeufele" ;;
         "Zyklop") echo "zyklop" ;;
-        *) 
+        "Crabby") echo "crabby" ;;
+        *)
             return 1
             ;;
     esac
