@@ -4,16 +4,16 @@ setupRobot() {
     local robot_name="$1"
     local valid_names=("bento_box" "zyklop" "schaeufele" "crabby")
 
+    # setup ros
+    source "/opt/ros/jazzy/setup.bash"
+    # fix error with rviz2 on kde neon
+    alias rviz2='QT_QPA_PLATFORM=xcb rviz2'
+
     # Validate name
     if [[ ! " ${valid_names[*]} " =~ " ${robot_name} " ]]; then
         echo "WiFi is not a robot. Connect to 'Bento-Box', 'Schaeufele', 'Zyklop' or 'Crabby'"
         return 1
     fi
-
-    # setup ros
-    source "/opt/ros/jazzy/setup.bash"
-    # fix error with rviz2 on kde neon
-    alias rviz2='QT_QPA_PLATFORM=xcb rviz2'
 
     # setup xauth for Bento-Operation docker
     if ! [[ -e $HOME/.Xauthority ]]
